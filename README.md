@@ -1,4 +1,3 @@
-# File-upload-system
 # 📁 File Upload System
 
 A simple and modern **File Upload System** built using **HTML, CSS, and JavaScript**.
