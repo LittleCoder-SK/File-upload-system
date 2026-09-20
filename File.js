@@ -52,7 +52,7 @@ send.addEventListener('click', function () {
 
 let showdata = localStorage.getItem("file")
 
-if(showdata){
+if (showdata) {
     FileData = JSON.parse(showdata); //convert json data into js object
 
     console.log("save data loaded form storage", FileData);
@@ -61,14 +61,14 @@ if(showdata){
 
 console.log(showdata);
 
-function displayFile(){
+function displayFile() {
     const getAllFiles = document.getElementById('file-div')
-   
-    if(!getAllFiles) return
+
+    if (!getAllFiles) return
 
     getAllFiles.innerHTML = ""
 
-    FileData.forEach((file, index)=>{
+    FileData.forEach((file, index) => {
         let img = document.createElement('img')
         img.src = file.content
 
@@ -76,24 +76,41 @@ function displayFile(){
         div.className = 'filesData'
 
         let span = document.createElement('span')
-        span.innerText = "⨉"
+        let img3 = document.createElement('img')
+        img3.src = 'delete.png'
+        img3.className = 'img3'
         span.id = 'deleteFile'
 
-        span.addEventListener('click', function(){
+        let link = document.createElement('a');
+        let img2 = document.createElement('img')
+        img2.src = 'download.png'
+        img2.className = 'img2'
+
+        span.addEventListener('click', function () {
             deleteFiles(index)
+        })
+
+        link.addEventListener('click', function () {
+            const files = FileData[index]
+
+            link.href = files.content;
+            link.download = files.name
         })
 
         div.appendChild(img)
         div.appendChild(span)
+        span.append(img3)
+        div.appendChild(link)
+        link.append(img2)
 
         console.log(file);
-        
+
         getAllFiles.append(div)
     })
 }
 
 
-function deleteFiles(index){
+function deleteFiles(index) {
     FileData.splice(index, 1)
     localStorage.setItem('file', JSON.stringify(FileData))
     displayFile()

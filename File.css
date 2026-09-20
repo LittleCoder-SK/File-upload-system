@@ -4,20 +4,20 @@
     box-sizing: border-box;
 }
 
-.main-file{
+.main-file {
     width: 100%;
     height: 100dvh;
     padding: 10px;
     background-color: gainsboro;
 }
 
-.main-file h1{
+.main-file h1 {
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.file{
-     display: flex;
+.file {
+    display: flex;
     justify-content: center;
     align-items: center;
     justify-self: center;
@@ -41,8 +41,8 @@
     border-radius: 5px;
 }
 
-.file button{
-     padding: 10px 20px;
+.file button {
+    padding: 10px 20px;
     border: none;
     border-radius: 7px;
     background: #2563eb;
@@ -62,10 +62,10 @@
     transform: translateY(0);
 }
 
-.get-files{
+.get-files {
     width: 80%;
     height: 73%;
-    background-color: rgb(187, 187, 224);
+    background-color: rgb(204, 204, 228);
     display: flex;
     justify-self: center;
     justify-content: center;
@@ -76,11 +76,11 @@
     border-bottom-right-radius: 4px;
 }
 
-.get-files::-webkit-scrollbar{
+.get-files::-webkit-scrollbar {
     overflow: hidden;
 }
 
-.filesData{
+.filesData {
     width: 180px;
     height: 180px;
     background-color: skyblue;
@@ -90,34 +90,64 @@
     position: relative;
 }
 
-.filesData img{
+.filesData img {
     width: 100%;
     height: 100%;
     background-position: center;
     border-radius: 4px;
 }
 
-.filesData span{
+.filesData span {
     position: absolute;
     top: 6px;
-    right: 10px;
-    font-size: 18px;
-    color: rgb(226, 217, 217);
+    right: 0;
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    background-color: #99afe0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
 }
 
-.filesData span:hover{
-    background-color: #1f53c5;
-     color: rgb(226, 217, 217);
+span .img3{
+    width: 60%;
+    height: 16px;
 }
 
-span:active{
+span:active {
     scale: .95;
 }
+
+.filesData a {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: bounce .8s ease-in-out infinite;
+}
+
+a:hover {
+    animation-play-state: paused;
+}
+
+a .img2 {
+    width: 100%;
+    height: 20px;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Light: #F5F7FB → #FFFFFF → #EEF0FF → #2563EB */
+
+/* Dark: #0B0F19 → #111827 → #151B2B → #6366F1 */
