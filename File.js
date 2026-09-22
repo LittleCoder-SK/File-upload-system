@@ -59,14 +59,24 @@ if (showdata) {
 
 }
 
-console.log(showdata);
-
+// displaying file on web page
 function displayFile() {
     const getAllFiles = document.getElementById('file-div')
 
     if (!getAllFiles) return
 
     getAllFiles.innerHTML = ""
+
+        // Check if there are no files
+    if (FileData.length === 0) {
+
+        let heading = document.createElement('h2');
+        heading.innerText = 'No file yet!!!';
+
+        getAllFiles.appendChild(heading);
+
+        return;
+    }
 
     FileData.forEach((file, index) => {
         let img = document.createElement('img')
@@ -109,7 +119,7 @@ function displayFile() {
     })
 }
 
-
+// delete file
 function deleteFiles(index) {
     FileData.splice(index, 1)
     localStorage.setItem('file', JSON.stringify(FileData))
