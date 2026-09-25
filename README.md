@@ -206,13 +206,13 @@ Some features that can be added in future versions:
 * [ ] Drag & Drop file upload
 * [ ] File preview
 * [ ] Download uploaded files
-* [ ] Upload progress indicator
+* [✅] Upload progress indicator
 * [ ] File type validation
 * [ ] File size validation
 * [ ] Search uploaded files
 * [ ] Sort files by name/date/size
 * [ ] Multiple file selection
-* [ ] Dark mode
+* [✅] Dark mode
 * [ ] Backend integration
 * [ ] Database storage
 * [ ] Cloud file storage

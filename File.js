@@ -59,7 +59,7 @@ if (showdata) {
 
 }
 
-// displaying file on web page
+// displaying file on web page and download file
 function displayFile() {
     const getAllFiles = document.getElementById('file-div')
 
@@ -126,6 +126,7 @@ function deleteFiles(index) {
     displayFile()
 }
 
+//dark mode
 function darkMode() {
     let darkToggle = document.querySelector('#darkToggle')
     let mainFile = document.querySelector('.main-file')
