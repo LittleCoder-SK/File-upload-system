@@ -67,7 +67,7 @@ function displayFile() {
 
     getAllFiles.innerHTML = ""
 
-        // Check if there are no files
+    // Check if there are no files
     if (FileData.length === 0) {
 
         let heading = document.createElement('h2');
@@ -126,5 +126,30 @@ function deleteFiles(index) {
     displayFile()
 }
 
+function darkMode() {
+    let darkToggle = document.querySelector('#darkToggle')
+    let mainFile = document.querySelector('.main-file')
 
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+        mainFile.classList.add('main-dark');
+        darkToggle.checked = true;
+    }
+
+    darkToggle.addEventListener('change', () => {
+
+        const isDark = darkToggle.checked;
+
+        mainFile.classList.toggle('main-dark', isDark);
+
+        localStorage.setItem(
+            'theme',
+            isDark ? 'dark' : 'light'
+        );
+    })
+
+}
+
+darkMode()
 displayFile()

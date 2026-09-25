@@ -6,10 +6,37 @@
 
 .main-file {
     width: 100%;
-    height: 100dvh;
+    min-height: 100dvh;
     padding: 10px;
-    background-color: gainsboro;
+    background: #dce5f7;
+    color: #111827;
     position: relative;
+    transition: 0.3s ease;
+}
+
+/* dark-mode */
+.main-file.main-dark {
+    background: #0B0F19;
+    color: #F8FAFC;
+}
+
+.main-file.main-dark .file {
+    background: #111827;
+    border-color: #2D3748;
+}
+
+.main-file.main-dark .get-files {
+    background: #151B2B;
+}
+
+.main-file.main-dark #send {
+    background: #6366F1;
+}
+
+.main-file.main-dark #chooseFile {
+    background: #1F2937;
+    color: #F8FAFC;
+    border-color: #374151;
 }
 
 .main-file h1 {
@@ -18,7 +45,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.main-file .dark-mode{
+.main-file .dark-mode {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -26,56 +53,57 @@
 
 /* The switch - the box around the slider */
 .switch {
-  font-size: 17px;
-  position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
 }
 
 /* Hide default HTML checkbox */
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 /* The slider */
 .slider {
-  --background: #28096b;
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--background);
-  transition: .5s;
-  border-radius: 30px;
+    --background: #28096b;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: .5s;
+    border-radius: 30px;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 50%;
-  left: 10%;
-  bottom: 15%;
-  box-shadow: inset 8px -4px 0px 0px #fff000;
-  background: var(--background);
-  transition: .5s;
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px #fff000;
+    background: var(--background);
+    transition: .5s;
 }
 
-input:checked + .slider {
-  background-color: #522ba7;
+input:checked+.slider {
+    background-color: #522ba7;
 }
 
-input:checked + .slider:before {
-  transform: translateX(100%);
-  box-shadow: inset 15px -4px 0px 15px #fff000;
+input:checked+.slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #fff000;
 }
 
+/* input div */
 .file {
     display: flex;
     justify-content: center;
@@ -84,8 +112,9 @@ input:checked + .slider:before {
     gap: 12px;
     padding: 10px;
     width: 80%;
-    background: #f5f5f5;
-    border: 1px solid #ddd;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    transition: 0.3s ease;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -95,9 +124,10 @@ input:checked + .slider:before {
     height: 35px;
     padding: 5px;
     font-size: 14px;
-    color: #555;
     cursor: pointer;
-    background: rgb(193, 186, 186);
+    background: #F1F3F7;
+    color: #111827;
+    border: 1px solid #D7DCE5;
     border-radius: 5px;
 }
 
@@ -105,7 +135,7 @@ input:checked + .slider:before {
     padding: 10px 20px;
     border: none;
     border-radius: 7px;
-    background: #2563eb;
+    background: #2563EB;
     color: white;
     font-size: 14px;
     font-weight: 600;
@@ -122,10 +152,12 @@ input:checked + .slider:before {
     transform: translateY(0);
 }
 
+/* get-files */
 .get-files {
     width: 80%;
     height: 73%;
-    background-color: rgb(204, 204, 228);
+    background: #EEF0FF;
+    transition: 0.3s ease;
     display: flex;
     justify-self: center;
     justify-content: center;
@@ -143,7 +175,6 @@ input:checked + .slider:before {
 .filesData {
     width: 180px;
     height: 180px;
-    background-color: skyblue;
     border-radius: 4px;
     margin-left: 10px;
     margin-bottom: 10px;
@@ -167,7 +198,7 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
-span .img3{
+span .img3 {
     width: 60%;
     height: 16px;
 }
