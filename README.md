@@ -205,8 +205,8 @@ Some features that can be added in future versions:
 
 * [ ] Drag & Drop file upload
 * [ ] File preview
-* [ ] Download uploaded files
-* [✅] Upload progress indicator
+* [✅] Download uploaded files
+* [ ] Upload progress indicator
 * [ ] File type validation
 * [ ] File size validation
 * [ ] Search uploaded files
